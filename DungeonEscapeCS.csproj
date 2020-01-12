@@ -46,16 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Game.cs" />
+    <Compile Include="GameWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GameWindow.Designer.cs">
+      <DependentUpon>GameWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Levels\Extra.cs" />
+    <Compile Include="Levels\Level.cs" />
+    <Compile Include="Levels\LevelData.cs" />
+    <Compile Include="Levels\Room.cs" />
+    <Compile Include="Levels\Special.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GameWindow.resx">
+      <DependentUpon>GameWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +88,95 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\empty.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\pause\asdf.png" />
+    <None Include="Resources\pause\cursor.png" />
+    <None Include="Resources\pause\pausescreen.png" />
+    <None Include="Resources\inventory\coins_inv.png" />
+    <None Include="Resources\inventory\error_50x50.png" />
+    <None Include="Resources\inventory\inventory.png" />
+    <None Include="Resources\inventory\inventory_selector.png" />
+    <None Include="Resources\inventory\invincible_inv.png" />
+    <None Include="Resources\inventory\life_inv.png" />
+    <None Include="Resources\inventory\none_left.png" />
+    <None Include="Resources\inventory\small_inv.png" />
+    <None Include="Resources\inventory\counter\0xx.png" />
+    <None Include="Resources\inventory\counter\1xx.png" />
+    <None Include="Resources\inventory\counter\2xx.png" />
+    <None Include="Resources\inventory\counter\3xx.png" />
+    <None Include="Resources\inventory\counter\4xx.png" />
+    <None Include="Resources\inventory\counter\5xx.png" />
+    <None Include="Resources\inventory\counter\6xx.png" />
+    <None Include="Resources\inventory\counter\7xx.png" />
+    <None Include="Resources\inventory\counter\8xx.png" />
+    <None Include="Resources\inventory\counter\9xx.png" />
+    <None Include="Resources\inventory\counter\counter.png" />
+    <None Include="Resources\inventory\counter\x0x.png" />
+    <None Include="Resources\inventory\counter\x1x.png" />
+    <None Include="Resources\inventory\counter\x2x.png" />
+    <None Include="Resources\inventory\counter\x3x.png" />
+    <None Include="Resources\inventory\counter\x4x.png" />
+    <None Include="Resources\inventory\counter\x5x.png" />
+    <None Include="Resources\inventory\counter\x6x.png" />
+    <None Include="Resources\inventory\counter\x7x.png" />
+    <None Include="Resources\inventory\counter\x8x.png" />
+    <None Include="Resources\inventory\counter\x9x.png" />
+    <None Include="Resources\inventory\counter\xx0.png" />
+    <None Include="Resources\inventory\counter\xx1.png" />
+    <None Include="Resources\inventory\counter\xx2.png" />
+    <None Include="Resources\inventory\counter\xx3.png" />
+    <None Include="Resources\inventory\counter\xx4.png" />
+    <None Include="Resources\inventory\counter\xx5.png" />
+    <None Include="Resources\inventory\counter\xx6.png" />
+    <None Include="Resources\inventory\counter\xx7.png" />
+    <None Include="Resources\inventory\counter\xx8.png" />
+    <None Include="Resources\inventory\counter\xx9.png" />
+    <None Include="Resources\game\black_80x80.png" />
+    <None Include="Resources\game\corner_ld.png" />
+    <None Include="Resources\game\corner_lu.png" />
+    <None Include="Resources\game\corner_rd.png" />
+    <None Include="Resources\game\corner_ru.png" />
+    <None Include="Resources\game\crawl_4.png" />
+    <None Include="Resources\game\crawl_ld.png" />
+    <None Include="Resources\game\crawl_lr.png" />
+    <None Include="Resources\game\crawl_lu.png" />
+    <None Include="Resources\game\crawl_rd.png" />
+    <None Include="Resources\game\crawl_ru.png" />
+    <None Include="Resources\game\crawl_ud.png" />
+    <None Include="Resources\game\end.png" />
+    <None Include="Resources\game\floor.png" />
+    <None Include="Resources\game\kill.png" />
+    <None Include="Resources\game\lock_d.png" />
+    <None Include="Resources\game\lock_l.png" />
+    <None Include="Resources\game\lock_r.png" />
+    <None Include="Resources\game\lock_u.png" />
+    <None Include="Resources\game\player.png" />
+    <None Include="Resources\game\player_tiny.png" />
+    <None Include="Resources\game\pressure_plate.png" />
+    <None Include="Resources\game\spike_wall_d.png" />
+    <None Include="Resources\game\spike_wall_l.png" />
+    <None Include="Resources\game\spike_wall_r.png" />
+    <None Include="Resources\game\spike_wall_u.png" />
+    <None Include="Resources\game\teleport.png" />
+    <None Include="Resources\game\temp_powerup.png" />
+    <None Include="Resources\game\wall.png" />
+    <None Include="Resources\game\wall_corner_ld.png" />
+    <None Include="Resources\game\wall_corner_lu.png" />
+    <None Include="Resources\game\wall_corner_rd.png" />
+    <None Include="Resources\game\wall_corner_ru.png" />
+    <None Include="Resources\game\wall_d.png" />
+    <None Include="Resources\game\wall_l.png" />
+    <None Include="Resources\game\wall_r.png" />
+    <None Include="Resources\game\wall_u.png" />
+    <None Include="Resources\game\way1ind.png" />
+    <None Include="Resources\game\way1inl.png" />
+    <None Include="Resources\game\way1inr.png" />
+    <None Include="Resources\game\way1inu.png" />
+    <None Include="Resources\game\way1outd.png" />
+    <None Include="Resources\game\way1outl.png" />
+    <None Include="Resources\game\way1outr.png" />
+    <None Include="Resources\game\way1outu.png" />
     <Content Include="Resources\Title.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
